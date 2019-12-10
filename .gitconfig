@@ -1,0 +1,91 @@
+[includeIf "gitdir:~/repos/personal"]
+    path = ~/.gitconfig-personal
+
+[core]
+    editor = vim
+[push]
+    default = matching
+[color]
+    ui = auto
+[color "branch"]
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[alias]
+    a = add --all
+    ai = add -i
+    #############
+    b = branch
+    ba = branch -a
+    bd = branch -d
+    bdd = branch -D
+    br = branch -r
+    bc = rev-parse --abbrev-ref HEAD
+    bu = !git rev-parse --abbrev-ref --symbolic-full-name "@{u}"
+    bs = !git-branch-status
+    #############
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+    #############
+    cl = clone
+    #############
+    d = diff
+    #############
+    f = fetch
+    fo = fetch origin
+    fu = fetch upstream
+    #############
+    g = grep -p
+    #############
+    lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    l = !"git lg1"
+    #############
+    ls = ls-files
+    lsf = !git ls-files | grep -i
+    #############
+    m = merge
+    #############
+    o = checkout
+    om = checkout master
+    ob = checkout -b
+    #############
+    ps = push
+    #############
+    pl = pull
+    #############
+    rmf = rm -f
+    rmrf = rm -r -f
+    #############
+    s = status
+    sb = status -s -b
+    #############
+    sa = stash apply
+    sc = stash clear
+    sd = stash drop
+    sl = stash list
+    sp = stash pop
+    ss = stash save
+    ssk = stash save -k
+    sw = stash show
+    st = !git stash list | wc -l 2>/dev/null | grep -oEi '[0-9][0-9]*'
+    #############
+    t = tag
+    td = tag -d
+    #############
